@@ -1,0 +1,28 @@
+
+<div class="formLogin">
+  <form [formGroup]="formLogin" class="col-4" >
+
+    <div class="form-group">
+      <label> Email: </label>
+      <input id="exampleInputEmail1"
+             aria-describedby="emailHelp"
+             class="form-control"
+             formControlName="email"
+             type="email"
+             placeholder="Seu email">
+    </div>
+
+    <div class="form-group">
+      <label>Senha: </label>
+      <input
+        type="password"
+        class="form-control"
+        id="exampleInputPassword1"
+        placeholder="Senha"
+        formControlName="senha"
+        type="password">
+    </div>
+
+    <button (click)="entrar()" class="btn btn-success">Entrar</button>
+  </form>
+</div>
