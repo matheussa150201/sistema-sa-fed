@@ -1,6 +1,21 @@
 
 .formLogin{
+  width: 100vw;
+  height: 100vh;
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  margin-top: 14rem;
+  align-items: center;
+}
+.Title{
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#fundo{
+  background-color: rgb(26, 25, 25);
+  background-image: url(https://i.pinimg.com/originals/1e/bf/48/1ebf480841b55944fefb3c4479b3151e.jpg);
 }
