@@ -13,10 +13,7 @@ export class ContainerLoginComponent implements OnInit {
   login!: Login;
   formLogin! : FormGroup;
   constructor(private formBuilder: FormBuilder,
-    private containerloginservice: ContanierloginService
-    ) { 
-      this.getLogin()
-    }
+    private containerloginservice: ContanierloginService) {}
 
   ngOnInit() {
     this.criarFormularioLogin(new Login())
@@ -29,12 +26,19 @@ export class ContainerLoginComponent implements OnInit {
     })
   }
 
-
-  public entrar(){
-    window.alert('email: ' + this.formLogin?.value?.email + ' senha : ' + this.formLogin?.value?.senha)
-  }
-
-  getLogin():void{
-    this.containerloginservice.getLogin().subscribe((login) => (this.login = login ));
+  entrar():void{
+    this.containerloginservice.getLogin(
+      this.formLogin?.value?.email,
+      this.formLogin?.value?.senha
+    ).subscribe((res) => {
+      if (res == true) {
+        alert("BEM VINDO AO SISTEMA");
+      }
+      if (res == false) {
+        alert("USUARIO INVALIDO");
+      }
+    }, error => {
+      alert("ERRO NO SISTEMA!")
+    })
   }
 }
